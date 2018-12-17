@@ -33,7 +33,7 @@ func Get(name ...string) *DB {
 		panic(errors.New(c + " database config not found"))
 	}
 
-	db, err := Open(config.Type, fmt.Sprintf("%s:%s@tcp(%s:%d)/%s", config.User, config.Password, config.Host, config.Port, config.Name))
+	db, err := Open(config.Type, fmt.Sprintf("%s:%s@tcp(%s:%d)/%s", config.User, config.Password, config.Host, config.Port, config.DBName))
 	if err != nil {
 		panic(errors.New(c + " database config not found"))
 	}
